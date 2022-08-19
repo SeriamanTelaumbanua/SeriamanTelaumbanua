@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Hind&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family:"Montserrat",sans-serif;
+    overflow-x: hidden;
+    background-image: url('assets/bg.webp');
+    background-size: cover;
+    background-position: center;
+    /* background-repeat: no-repeat; */
+}
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    margin: 15px 30px auto 30px;
+    background-color: #F0B395;
+    border-radius: 15px;
+    
+}
+header .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Pacifico";
+    margin: auto;
+    letter-spacing: 10px;
+    
+}
+
+.searchBox{
+    float: right;
+    margin: 15px 50px 30px auto;
+    /* border: 3px solid red; */
+}
+
+.searchBox form input{
+    height: 25px;
+    border-radius: 15px; 
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    background-color: blanchedalmond;
+    border: none;
+    text-align: center;
+   
+}
+.searchBox form button{
+    height: 25px;
+    border-radius: 7px; 
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    background-color: blanchedalmond;
+    border: none;
+}
+
+main{
+    display: flex;
+    /* border: 3px solid red; */
+    margin-left: 30px;
+    margin-right: 30px;
+}
+main aside{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 15%;
+    /* height: 15vh; */
+    border: 3px solid purple;
+    border-radius: 15px;
+    box-shadow: 10px 5px 5px #F0B395 ;
+    background-color:rgb(243, 202, 202);
+    margin: 0 30px auto;
+    
+}
+
+main aside #submenu-add{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    
+}
+main aside #submenu-complete{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    
+}
+main aside #submenu-incomplete{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    
+}
+
+main aside a{
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    
+}
+
+main .mybook {
+    display: flex;
+    width: 80%;
+  
+}
+section{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.mybook section h3{
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background-color: rgb(165, 172, 172);
+    font-family: "pacifico";
+    color: rgb(19, 18, 14);
+    margin-bottom: 50px;
+    border-radius: 5px;
+    box-shadow: 5px 8px 3px rgb(90, 150, 90);
+    padding: 5px 5px;
+}
+
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left: 20px;
+    margin-right: 5px;
+    margin-bottom: 50px;
+    border-color: rgb(220, 180, 23);
+    border-radius: 15px;
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 300px;
+    
+}
+img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    width: 230px;
+    height: 300px;
+}
+figcaption {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 33%;
+    font-style: italic;
+    font-family: "Pacifico";
+   
+}
+
+figcaption button {
+    width: fit-content;
+    border-radius: 5px;
+    background-color: #F0B395 ;
+    margin-top:15px ;
+    margin-bottom: 15px;
+    padding: 7px 10px;
+}
+.complete{
+    width: 50%;
+    display: flex;
+    justify-content: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.incomplete {
+    width: 50%;
+    display: flex;
+    justify-content: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.addForm {
+    display: none;
+}
+
+.addForm.active{
+    /* visibility: hidden; */
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    margin-top: 17%;
+    margin-left: 30%;
+    margin-right: 30%;
+    /* border: 5px solid rgb(214, 33, 132); */
+    width: 40%;
+    height: 50vh;
+    background-color: #F0B395;
+    border-radius: 15px;
+    box-shadow: 10px 5px 5px rgb(245, 44, 185);
+}
+
+.addForm.active h2{
+    height: 20%;
+    /* border: 5px solid rgb(214, 33, 132); */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "pacifico";
+    color: rgb(214, 135, 39);
+   
+}
+/* .addForm.active hr {
+    border: 1px dashed rgb(17, 10, 10);
+   width: 100%;
+} */
+.addForm.active form{
+    height: 70%;
+    /* border: 5px solid rgb(214, 33, 132); */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5px 5px;
+    font-size: 19px;
+}
+.addForm.active form p{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.addForm.active form p span{
+    font-style: italic;
+    display: flex;
+
+} 
+
+.addForm.active form p input{
+    display: flex;
+    float: right;
+    width: 45%;
+}
+.addForm.active form button{
+    width: 30%;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+.addForm.active form button:hover{
+   background-color: rgb(227, 238, 21);
+   transform: scale(110%);
+}
+.modal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #c8dda8;
+    position: fixed;
+    padding: 50px 50px;
+    top: 20%;
+    left: 20%;
+    right: 20%;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 30px;
+}
+.modal .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid red;
+    margin-bottom: 40px;
+    border-radius: 20px;
+
+}
+.modal .content figure{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    /* height: 100%; */
+    margin-right: 5px;
+}
+.modal .content figure img{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal .content figcaption{
+    width: 60%;
+    /* height: 100%; */
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items:flex-start;
+    /* border: 1px solid red; */
+    padding: 5px 5px;
+    background-color: #e0dc9e;
+    border-radius: 10px;
+}
+.modal .content figcaption p {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: fit-content;
+    height: fit-content;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+}
+.modal .content figcaption p span{
+    text-align: center;
+    font-size: 14px;
+}
+
+.modal .navModal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal .navModal  .btnDelete{
+    height: 30px;
+    width: fit-content;
+    border-radius: 10px;
+    margin-right: 25px;
+    background-color: powderblue;
+    text-align: center;
+    padding: 5px 5px;
+    border: none; 
+
+
+}
+.modal .navModal  .btnDelete:hover{
+    transform: scale(110%) rotate(1deg);
+}
+.modal .navModal  .btnMove{
+    height: 30px;
+    width: fit-content;
+    border-radius: 5px;
+    margin-right: 25px;
+    background-color: greenyellow;
+    text-align: center;
+    padding: 5px 5px;
+    border: none; 
+
+}
+.modal .navModal  .btnMove:hover{
+    transform: scale(1.1) rotate(1deg);
+}
+.modal .navModal  .close-modal{
+    height: 30px;
+    width: fit-content;
+    border-radius: 5px;
+    margin-right: 25px;
+    background-color: red;
+    text-align: center;
+    padding: 5px 5px;
+    border: none; 
+
+}
+.modal .navModal .close-modal:hover{
+    transform: scale(110%);
+}
+.close {
+    background-color: rgb(136, 26, 26) !important;
+}
+
+
+
+/* Desktop Version */
+@media (max-width: 992px) { 
+    main{
+        margin: 0;
+    }
+    main menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+    }
+    main .mybook{
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        height: 100vh;
+        margin-right: 0;
+    }
+    main .mybook section {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+    }
+    main .mybook section h2{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        height: 50px;
+    }
+}
