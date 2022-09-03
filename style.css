@@ -1,243 +1,183 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Hind&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* --bg-color:#F0B395; */
+    --bg-color: #eebf91;
+    --btn-hover: rgb(221, 171, 86);
+    
 }
-body{
-    font-family:"Montserrat",sans-serif;
-    overflow-x: hidden;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family:"Montserrat", sans-serif;
     background-image: url('assets/bg.webp');
     background-size: cover;
     background-position: center;
-    /* background-repeat: no-repeat; */
-}
-.container{
-    display: flex;
-    flex-direction: column;
+    background-repeat:repeat;
 }
 
-/* Navbar */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 10vh;
-    margin: 15px 30px auto 30px;
-    background-color: #F0B395;
-    border-radius: 15px;
-    
-}
-header .logo{
+header{
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    background-color: var(--bg-color);
+    margin: 30px 30px 35px 30px;
+    padding: 10px 5px;
+    border-radius: 15px;
+    height: 10vh;
     font-family: "Pacifico";
-    margin: auto;
     letter-spacing: 10px;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.19);
+}
+.searchBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+    width: 25%;
+    margin: auto;
+    /* background-color: #fff; */
+    border-radius: 8px;
+    padding: 10px 10px;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.19);
+
+}
+.searchBox form {
+    display: flex;
+    justify-content: space-between;
+    /* padding: 5px 5px; */
     
 }
-
-.searchBox{
-    float: right;
-    margin: 15px 50px 30px auto;
-    /* border: 3px solid red; */
-}
-
-.searchBox form input{
-    height: 25px;
-    border-radius: 15px; 
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-    background-color: blanchedalmond;
-    border: none;
+.searchBox form > #input-search {
+    width: 70%;
     text-align: center;
-   
+    padding: 5px 5px;
+    margin-right: 15px;
+    border-radius: 8px;
+
 }
-.searchBox form button{
-    height: 25px;
-    border-radius: 7px; 
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-    background-color: blanchedalmond;
+.searchBox form > #search {
+    width: fit-content;
+    text-align: center;
+    padding: 5px 5px;
+    border-radius: 8px;
+    border: none;
+    background-color: antiquewhite;
+}
+.searchBox form > #search:hover {
+    background-color: var(--btn-hover);
+    transform: scale(110%);
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.19);
     border: none;
 }
 
 main{
     display: flex;
-    /* border: 3px solid red; */
-    margin-left: 30px;
-    margin-right: 30px;
-}
-main aside{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 15%;
-    /* height: 15vh; */
-    border: 3px solid purple;
-    border-radius: 15px;
-    box-shadow: 10px 5px 5px #F0B395 ;
-    background-color:rgb(243, 202, 202);
-    margin: 0 30px auto;
+    margin: 30px 30px auto 30px;
+    height: 100%;
     
 }
-
-main aside #submenu-add{
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    
-}
-main aside #submenu-complete{
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    
-}
-main aside #submenu-incomplete{
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    
-}
-
-main aside a{
-    text-decoration: none;
-    text-transform: uppercase;
-    text-align: center;
-    
-}
-
 main .mybook {
+    width: 88%;
+    height: 100%;
     display: flex;
-    width: 80%;
-  
+    /* background-color: var(--bg-color); */
+    margin-right: 15px;
 }
-section{
+.mybook > #complete,#incomplete{
+    width: 49%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    /* border: 1px solid red; */
+}
+.complete-header,.incomplete-header {
+    height: 5vh;
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    /* margin-bottom: 30px; */
+    margin: 0 auto 30px auto;
+    font-family: Hind;
+    letter-spacing: 3px;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.19);
+}
+/* .mybook > #complete .complete-cards,#incomplete .incomplete-cards{
+    background-color: var(--bg-color);
+} */
+.mybook > #complete .complete-cards{
     display: flex;
     flex-direction: column;
 }
 
-.mybook section h3{
-    width: fit-content;
+aside{
     display: flex;
-    justify-content: center;
+    float: right;
+    width: 10%;
+    height: fit-content;
+    background-color: var(--bg-color);
+    padding: 15px 15px;
+    border-radius: 12%;
+}
+aside .addMenu{
+    display: flex;
+    justify-content: space-evenly;
     align-items: center;
-    height: 50px;
-    background-color: rgb(165, 172, 172);
-    font-family: "pacifico";
-    color: rgb(19, 18, 14);
-    margin-bottom: 50px;
-    border-radius: 5px;
-    box-shadow: 5px 8px 3px rgb(90, 150, 90);
+    width: 100%;
+    background-color: #7f8c99;
+    border-radius: 12px;
     padding: 5px 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+aside .addMenu:hover{
+    background-color: var(--btn-hover);
+    cursor: pointer;
+    border: none;
 }
 
-
-.cards {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-left: 20px;
-    margin-right: 5px;
-    margin-bottom: 50px;
-    border-color: rgb(220, 180, 23);
-    border-radius: 15px;
-}
-
-figure {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    height: 300px;
-    
-}
-img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-    width: 230px;
-    height: 300px;
-}
-figcaption {
+.addForm{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 33%;
-    font-style: italic;
-    font-family: "Pacifico";
-   
-}
-
-figcaption button {
-    width: fit-content;
-    border-radius: 5px;
-    background-color: #F0B395 ;
-    margin-top:15px ;
-    margin-bottom: 15px;
-    padding: 7px 10px;
-}
-.complete{
-    width: 50%;
-    display: flex;
-    justify-content: column;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.incomplete {
-    width: 50%;
-    display: flex;
-    justify-content: column;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.addForm {
-    display: none;
-}
-
-.addForm.active{
-    /* visibility: hidden; */
-   
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    margin-top: 17%;
-    margin-left: 30%;
-    margin-right: 30%;
-    /* border: 5px solid rgb(214, 33, 132); */
-    width: 40%;
+    position: absolute;
+    /* margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 5%; */
+    margin: 20% 35% auto 35%;
+    width: 30%;
     height: 50vh;
-    background-color: #F0B395;
+    background-color: rgb(183, 174, 164);
     border-radius: 15px;
-    box-shadow: 10px 5px 5px rgb(245, 44, 185);
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.19);
 }
-
-.addForm.active h2{
-    height: 20%;
-    /* border: 5px solid rgb(214, 33, 132); */
+.addForm >h2 {
+    height: 15%;
+    width: 45%;
+    margin-top: 20px;
+    background-color: rgb(128, 108, 122);
+    border-radius: 10px;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: "pacifico";
     color: rgb(214, 135, 39);
-   
 }
-/* .addForm.active hr {
-    border: 1px dashed rgb(17, 10, 10);
-   width: 100%;
-} */
-.addForm.active form{
+.addForm >form {
     height: 70%;
     /* border: 5px solid rgb(214, 33, 132); */
     display: flex;
@@ -246,43 +186,123 @@ figcaption button {
     padding: 5px 5px;
     font-size: 19px;
 }
-.addForm.active form p{
+.addForm > form p {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.addForm.active form p span{
+.addForm > form p span{
     font-style: italic;
     display: flex;
 
 } 
 
-.addForm.active form p input{
+.addForm > form p input{
     display: flex;
     float: right;
     width: 45%;
 }
-.addForm.active form button{
+.addForm > form button{
     width: 30%;
     margin-top: 20px;
     border-radius: 10px;
+    text-align: center;
+    border: none;
 }
-.addForm.active form button:hover{
-   background-color: rgb(227, 238, 21);
+
+.addForm >form #btn-form{
+    display: flex;
+    justify-content: space-between;
+    border: none;
+
+}
+
+.addForm > form #btn-add:hover{
+   background-color: var(--btn-hover);
    transform: scale(110%);
+   border: none;
 }
+.addForm > form #btn-close:hover{
+   background-color: rgb(228, 60, 60);
+   transform: scale(110%);
+   border: none;
+}
+
+
+/* cards */
+.cards {
+    width: 60%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 25px auto 20px auto;
+    padding: 8px 8px;
+    background-color: #edf1f5;
+    border-radius: 8%;
+}
+.cards img{
+    width: 250px;
+    height: 250px;
+    margin-top: 15px;
+    border-radius: 10%;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.cards figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+hr {
+    width: 100%;
+    border: 1px solid #4c4948;
+    margin-top: 13px;
+    margin-bottom: 13px;
+}
+.cards figcaption {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 33%;
+    font-style: italic;
+    font-family: "Pacifico";
+
+   
+}
+
+.cards figcaption button {
+    width: fit-content;
+    border-radius: 12px;
+    background-color: #c4bfbd ;
+    margin-top:15px ;
+    margin-bottom: 15px;
+    padding: 7px 10px;
+    border: none;
+}
+
+.cards figcaption button:hover{
+    transform: scale(110%);
+    background-color: var(--btn-hover);
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: none;
+}
+
 .modal{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #c8dda8;
+    background-color: var(--bg-color);
     position: fixed;
     padding: 50px 50px;
-    top: 20%;
-    left: 20%;
-    right: 20%;
-    width: fit-content;
+    top: 20vh;
+    left: 30%;
+    right: 30%;
+    margin: auto;
+    width: 40%;
     height: fit-content;
     border-radius: 30px;
 }
@@ -290,35 +310,38 @@ figcaption button {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid red;
+    /* border: 3px solid rgb(232, 73, 152); */
     margin-bottom: 40px;
     border-radius: 20px;
+    
 
 }
 .modal .content figure{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40%;
-    /* height: 100%; */
-    margin-right: 5px;
+    width: 48%;
+    height: 100%;
+    margin-right: 15px;
+    padding: 10px 5px;
 }
-.modal .content figure img{
+.modal .modal-content .content figure img{
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .modal .content figcaption{
-    width: 60%;
-    /* height: 100%; */
+    width: 48%;
+    height: 100%;
+    padding: 10px 5px;
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     justify-content: center;
     align-items:flex-start;
-    /* border: 1px solid red; */
-    padding: 5px 5px;
     background-color: #e0dc9e;
     border-radius: 10px;
 }
@@ -329,7 +352,7 @@ figcaption button {
     align-items: flex-start;
     width: fit-content;
     height: fit-content;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Hind', serif;
     font-size: 20px;
 }
 .modal .content figcaption p span{
@@ -342,89 +365,336 @@ figcaption button {
     justify-content: center;
     align-items: center;
 }
-.modal .navModal  .btnDelete{
+.modal .navModal .btn-delete{
     height: 30px;
     width: fit-content;
     border-radius: 10px;
-    margin-right: 25px;
+    margin-right: 50px;
     background-color: powderblue;
     text-align: center;
-    padding: 5px 5px;
+    padding: 10px 10px;
     border: none; 
 
 
 }
-.modal .navModal  .btnDelete:hover{
-    transform: scale(110%) rotate(1deg);
+.modal .navModal .btn-delete:hover{
+    transform: scale(115%);
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.4ms all ease-in-out;
 }
-.modal .navModal  .btnMove{
+.modal .navModal  .btn-move{
     height: 30px;
     width: fit-content;
-    border-radius: 5px;
-    margin-right: 25px;
+    border-radius: 10px;
+    margin-right: 50px;
     background-color: greenyellow;
     text-align: center;
-    padding: 5px 5px;
+    padding: 10px 10px;
     border: none; 
 
 }
-.modal .navModal  .btnMove:hover{
-    transform: scale(1.1) rotate(1deg);
+.modal .navModal  .btn-move:hover{
+    transform: scale(115%);
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.4ms all ease-in-out;
 }
-.modal .navModal  .close-modal{
+.modal .navModal .btn-close{
     height: 30px;
     width: fit-content;
-    border-radius: 5px;
-    margin-right: 25px;
+    border-radius: 10px;
     background-color: red;
     text-align: center;
-    padding: 5px 5px;
+    padding: 10px 10px;
     border: none; 
 
 }
-.modal .navModal .close-modal:hover{
-    transform: scale(110%);
+.modal .navModal .btn-close:hover{
+    transform: scale(115%);
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.4ms all ease-in-out;
 }
-.close {
-    background-color: rgb(136, 26, 26) !important;
+.card-result{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 60vh;
+    background-color:  #edf1f5;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 30px;
+
+}
+.card-result figure {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%; 
+    padding: 10px 5px;
+    margin: auto;
+
+}
+.card-result figure img{
+    width: 80%;
+    margin: auto;
+    border-radius: 30px;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+
+}
+.card-result figure hr{
+    margin-top: 20px;
+}
+.card-result figcaption{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 100%;
+    height:30% ;
+    font-size: 16px;
+    font-style: italic;
+    letter-spacing: 2px;
+    border-radius: 10px;
+}
+.card-result figcaption p{
+    display: flex;
+    margin-left: 10px;
+}
+.card-result figcaption .btn-modal{
+    height: 30px;
+    width: fit-content;
+    border-radius: 10px;
+    margin-top: 16px;
+    background-color: powderblue;
+    text-align: center;
+    padding: 10px 10px;
+    border: none; 
+    margin-left: 15px
+
+}
+.card-result figcaption .btn-modal:hover{
+    transform: scale(115%);
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.4ms all ease-in-out;
+    background-color: var(--bg-color);
 }
 
+@media screen and (max-width: 768px) {
 
-
-/* Desktop Version */
-@media (max-width: 992px) { 
-    main{
-        margin: 0;
-    }
-    main menu {
+    .container{
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 150px;
-    }
-    main .mybook{
-        display: flex;
-        flex-direction: column;
-        width: 70%;
-        height: 100vh;
-        margin-right: 0;
-    }
-    main .mybook section {
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         width: 100%;
+    }
+    header{
+        margin: 30px 30px 30px 30px;
+        font-size: 14px;
+    }
+    .searchBox{
+        width: 45%;
+        height: fit-content;
+        float: right;
+        position: absolute;
+        top: 16vh;
+        left: 47vw;
+        margin-bottom: 20px;
+    }
+   main{
+    display: flex;
+    flex-direction: column;
+    margin: 30px 30px 30px 30px;
+    
+    }
+    main .mybook {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .mybook > #complete,#incomplete{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        margin-right: 15px;
+        margin-top: 15px;
+    }
+    .complete-header,.incomplete-header {
+        width: fit-content;
+        margin: 5px auto 12px auto;
+        font-size: 12px;
+    }
+    .mybook > #complete .complete-cards{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .cards {
+    width: 100%;
+    }
+
+    .modal{
+        width:90vw ;
+        height: 70vh;
+        top: 15vh;
+        bottom: 15vh;
+        left: 5vw;
+        right:5vw;
+        padding: 10px 10px;
 
     }
-    main .mybook section h2{
+    .modal-content{
+        height: 60vh;
+        width: 100vw;
+        padding: 20px 5px;
+        margin-bottom: 15px;
+    }
+    .modal .content {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
-        border-radius: 15px;
-        height: 50px;
+        align-items: space-between;
+        margin-bottom: 15px;
+        border-radius: 20px;
+        height: 90%;
+
     }
+    .modal .content figure{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+        height: 65%;
+        margin-right: 1px;
+        margin-left: 15px;
+    }
+    .modal .modal-content .content figure img{
+        width: 90%;
+        height: 100%;
+        border-radius: 15px;
+        box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin-bottom: 10px;
+    }
+    .modal .content figcaption{
+        width: 75%;
+        height: 35%;
+        padding: 10px 10px;
+        margin-bottom: 5px;
+    }
+    .modal .content figcaption p {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: fit-content;
+        height: 6px;
+        font-family: 'Hind', serif;
+        font-size: 12px;
+    }
+    .modal .content figcaption p span{
+        text-align: center;
+        font-size: 12px;
+    }
+    .modal .content figcaption p :nth-child(1){
+        font-size: 10px;
+    }
+
+    .modal .navModal{
+        width: 100%;
+        height: 15%;
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 35px;
+    }
+
+    aside{
+        position: absolute;
+        float: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30%;
+        top: 16vh;
+        height: 6vh;
+        padding: 15px 15px;
+        border-radius: 15%;
+    }
+
+.addForm{
+    margin: auto;
+    top: 18vh;
+    left: 10vw;
+    right: 10vw;
+    width: 80vw;
+    height: 70vh;
+    border-radius: 30px;
 }
+.addForm >h2 {
+    height: 15%;
+    width: 70%;
+    margin-top: 20px;
+    background-color: rgb(222, 197, 172);
+    border-radius: 18px;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "pacifico";
+    font-weight: 300;
+    letter-spacing: 3px;
+    color: rgb(13, 13, 13);
+}
+.addForm >form {
+    height: 70%;
+    /* border: 5px solid rgb(214, 33, 132); */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5px 5px;
+    font-size: 19px;
+}
+.addForm > form p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.addForm > form p span{
+    font-style: italic;
+    display: flex;
+
+} 
+
+.addForm > form p input{
+    display: flex;
+    float: right;
+    width: 45%;
+}
+.addForm > form button{
+    width: 30%;
+    margin-top: 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+}
+
+.addForm >form #btn-form{
+    display: flex;
+    justify-content: space-between;
+    border: none;
+
+}
+
+.addForm > form #btn-add:hover{
+   background-color: var(--btn-hover);
+   transform: scale(110%);
+   border: none;
+}
+.addForm > form #btn-close:hover{
+   background-color: rgb(228, 60, 60);
+   transform: scale(110%);
+   border: none;
+}
+
+}
+

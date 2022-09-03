@@ -6,26 +6,40 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
-        <title>Seriaman-Bookshelf </title>
+        <title>seriaman-bookshelf</title>
     </head>
 
     <body>
         <div class="container">
-
             <header>
                 <div class="logo">Seriaman-Bookshelf </div>
             </header>
-
             <div class="searchBox">
                 <form>
-                    <input type="text" id="inputSearch" placeholder="Judul Buku">
+                    <input type="text" id="input-search" placeholder="Judul Buku">
                     <button type="submit" id="search">Search</button>
                 </form>
             </div>
-           
             <main>
+                <div class="mybook">
+                    <div id="complete">
+                        <div class="complete-header">
+                            <h2>&#128214 Sudah Dibaca</h2>
+                        </div>
+                        <div class="complete-cards">
+
+                        </div>
+                    </div>
+                    <div id="incomplete">
+                        <div class="incomplete-header">
+                            <h2>&#x1F4DA Belum Dibaca</h2>
+                        </div>
+                        <div class="incomplete-cards">
+                        </div>
+                    </div>
+                </div>
                 <aside>
-                    <a href="" id="submenu-add">
+                    <div class="addMenu">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                             <path fill="none" d="M0 0h24v24H0z" />
                             <path
@@ -33,48 +47,12 @@
                                 fill="rgba(242,30,121,1)" />
                         </svg>
                         <h4>Add</h4>
-                    </a>
-                    <!-- <a href="#" id="submenu-complete" onclick="showComplete()">
-                        <span>&#128214</span>
-                        <h4>Complete</h4>
-                    </a>
-                    <a href="#incomplete" id="submenu-incomplete" onclick="showIncomplete()">
-                        <span>&#x1F4DA</span>
-                        <h4>Incomplete</h4>
-                    </a> -->
-                </aside>
-
-                <div class="mybook">
-                    <div class="searchResult">
-
                     </div>
-                    <section>
-                        <h3>&#128214 Sudah Dibaca</h3>
-                        <div class="complete" >
-
-                        </div>
-                    </section>
-                    <section>
-                        <h3>&#x1F4DA Belum Dibaca</h3>
-                        <div class="incomplete">
-                    </section>
-
-                </div>
-
+                </aside>
             </main>
-            <div class="addForm">
-                <h2>Tambahkan Buku</h2>
-                <form>
-                    <p><span>Judul</span> <input type="text" id="inputTitle" placeholder="Title" required></p>
-                    <p><span>Penulis</span> <input type="text" id="inputAuthor" placeholder="Author" required></p>
-                    <p><span>Tahun</span><input type="number" id="inputYear" placeholder="Year" required></p>
-                    <p><span>Status Baca</span><input type="checkbox" id="inputStatus" placeholder="Status"></p>
-                    <button type="submit" id="btn-add">Tambah</button>
-                </form>
-            </div>
 
         </div>
-        <script src="main.js"></script>
+        <script src="script.js"></script>
     </body>
 
 </html>
